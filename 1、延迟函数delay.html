@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>延迟函数delay</title>
+</head>
+<body>
+	<script>
+		const delay = ms => new Promise((resolve, reject) => setTimeout(resolve,ms))
+		const getData = status => new Promise((resolve, reject) => {
+			status ? resolve('success') : reject('fail')
+		})
+		const getRes = async (data) => {
+			try {
+				const res = await getData(data)
+				const timestamp = new Date().getTime()
+				await delay(1000)
+				console.log(res, new Date().getTime() - timestamp)
+			} catch(error) {
+				console.log(error)
+			}
+		}
+
+		getRes(true) // 隔了1秒
+	</script>
+</body>
+</html>

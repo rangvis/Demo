@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>7、获取当前子元素是其父元素下子元素的排位</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const getIndex = el => {
+			if(!el) {
+				return -1
+			}
+			let index =0
+			do {
+				index++
+			} while (el = el.previousElementSibling);
+			return index
+		}
+
+		// console.log(index, '---')
+	</script>
+</body>
+</html>

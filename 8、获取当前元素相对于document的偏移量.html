@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>8、获取当前元素相对于document的偏移量</title>
+</head>
+<style type="text/css" media="screen">
+	
+</style>
+<body>
+	<script type="text/javascript">
+		const getOffset = el => {
+			const {
+				top,
+				left
+			} = el.getBoundingClientRect()
+			const {
+				scorllTop,
+				scorllLeft
+			} = document.body
+			return {
+				top: top + scrollTop,
+				left: left + scorllLefr
+			}
+		}
+	</script>
+</body>
+</html>

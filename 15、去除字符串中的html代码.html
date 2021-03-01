@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>15、去除字符串中的html代码</title>
+</head>
+<body>
+	<script>
+		
+ 	const removehtml = (str = '') => str.replace(/<[\/\!]*[^<>]*>/ig, '')
+ 	console.log(removehtml('<h1>哈哈哈哈<呵呵呵</h1>')) // 哈哈哈哈<呵呵呵
+
+	</script>
+</body>
+</html>

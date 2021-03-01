@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>12、将指定格式的字符串解析为日期字符串</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+	const dataPattern = (str, format = '-') => {
+     	if (!str) {
+         	return new Date()
+     	}
+     	const dateReg = new RegExp(`^(\\d{2})${format}(\\d{2})${format}(\\d{4})$`)
+     	const [, month, day, year] = dateReg.exec(str)
+     	return new Date(`${month}, ${day} ${year}`)
+ 	}
+ 
+ 	console.log(dataPattern('02-28-2021')) // Sun Feb 28 2021 00:00:00 GMT+0800 (中国标准时间)
+
+	</script>
+</body>
+</html>

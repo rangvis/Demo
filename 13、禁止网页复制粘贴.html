@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>13、禁止网页复制粘贴</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		const html = document.querySelector('html')
+ 		html.oncopy = () => false // 复制
+ 		html.onpaste = () => false // 粘贴
+
+	</script>
+</body>
+</html>

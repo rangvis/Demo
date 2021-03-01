@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>4、函数柯里化</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const curring = fn => {
+			const { length } = fn
+			const curried = (...args) => {
+         		return (args.length >= length
+               	? fn(...args)
+               	: (...args2) => curried(...args.concat(args2)))
+     	}
+			return curried
+		}
+
+	const listMerge = (a, b, c) => [a, b, c]
+	const curried = curring(listMerge)
+	console.log(curried(1)(2)(3), '--') // [1, 2, 3]
+	console.log(curried(1, 2),(3), '++') // [1, 2, 3]
+	console.log(curried(1, 2, 3), '==') // [1, 2, 3]
+
+
+	</script>
+</body>
+</html>

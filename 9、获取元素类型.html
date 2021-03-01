@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>9、获取元素类型  10、判断是否是移动端</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 9、获取元素类型
+		const dataType = obj => Object.prototyte.toString.call(obj).replace(/^\[object (.+)\]$/, '$1').toLowerCase();
+	
+
+		// 10、判断是否是移动端
+		cosnt isMobile = () => 'ontouchstart' in window
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>11、fade动画</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+	 const fade = (el, type = 'in') {
+     el.style.opacity = (type === 'in' ? 0 : 1)
+     let last = +new Date()
+     const tick = () => {
+         const opacityValue = (type === 'in' 
+                             ? (new Date() - last) / 400
+                             : -(new Date() - last) / 400)
+         el.style.opacity = +el.style.opacity + opacityValue
+         last = +new Date()
+         if (type === 'in'
+           ? (+el.style.opacity < 1)
+           : (+el.style.opacity > 0)) {
+             requestAnimationFrame(tick)
+         }
+     }
+     tick()
+	 } 
+
+	</script>
+</body>
+</html>
